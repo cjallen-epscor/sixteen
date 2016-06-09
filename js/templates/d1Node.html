@@ -1,0 +1,50 @@
+<!-- Represents a single row in the NodesView table -->
+<!-- Node ID -->
+<!-- Node Name -->
+<td class="center">
+	<a class="popover-target" id="state_<%=shortId%>"
+	data-toggle="popover"
+	data-trigger="hover" data-container="#state_<%=shortId%>"
+	data-placement="top" title="" data-original-title="Repository Status: <%=state%>"
+	data-content="Last harvested: <%=lastHarvested%>">
+	
+	<%
+		if (state == 'up') {
+			print('<i class="halflings-icon ok-circle"></i>');
+		}
+		if (state == 'unknown') {
+			print('<i class="halflings-icon question-sign"></i>');
+		}
+		if (state == 'down') {
+			print('<i class="halflings-icon warning-sign"></i>');
+		}
+	%>
+	
+	</a> 
+	
+</td>
+<td>
+	<a class="popover-target" id="<%=shortId%>"
+	data-toggle="popover"
+	data-trigger="hover" data-container="#<%=shortId%>"
+	data-placement="top" title="" data-original-title="<%=shortId%>"
+	data-content="<%=description%>">
+	<%=name%>
+	</a> 
+	<a href="#nodes/detail/<%=id%>" class=""><i class="halflings-icon circle-arrow-right pull-right"></i></a>
+</td>
+<!-- Node Data Count -->
+<td class="center"><span class="badge badge-data"><%=countData%></span></td>
+
+<!-- Node Metadata Count -->
+<td class="center"><span class="badge badge-metadata"><%=countMetadata%></span></td>
+
+<!-- Node Package Count -->
+<!--td class="center"><span class="badge badge-package"><%=countPackage%></span></td-->
+
+<!-- Node Total Count -->
+<td class="center"><span class="badge badge-total"><%=countTotal%></span></td>
+
+<!-- Node Data Count -->
+<td class="center"><span class="badge badge-download"><%=countDownloads%></span></td>
+

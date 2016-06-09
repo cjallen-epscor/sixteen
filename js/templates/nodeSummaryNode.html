@@ -1,0 +1,42 @@
+<!-- Represents a single row in the NodeSummary table -->
+<td class="center" style="width:10%;">
+	<div class="popover-target"
+	data-toggle="popover"
+	data-trigger="hover" data-container="body"
+	data-placement="top" title="" data-original-title="Repository Status: <%=state%>"
+	data-content="Newest Content: <%=lastHarvested%>">
+	<%
+		if (state == 'OK') {
+			print('<span class="glyphicon glyphicon-ok-sign repo-status repo-status-ok"></span>');
+		}
+		if (state == 'Unknown') {
+			print('<span class="glyphicon glyphicon-question-sign repo-status repo-status-unknown"></span>');
+		}
+		if (state == 'Down') {
+			print('<span class="glyphicon glyphicon-exclamation-sign repo-status repo-status-down"></span>');
+		}
+	%>
+	</div> 
+</td>
+<td class="node-summary-logo-cell" style="width:37%;">
+	<%
+		if (logoUrl != '') {
+			print('<a href="' + homeUrl + '" target="_blank"><img src="' + logoUrl + '" class="node-summary-logo"></a>');
+		}
+	%>
+</td>
+<td class="node-summary-name-cell" style="width:39%;">
+	<a class="d1-anchor-style" href="#nodes/<%=shortId%>">
+	 	<span class="glyphicon glyphicon-stats node-stats-icon"/>
+		<%=name%>
+	</a>
+</td>
+<td class="center" style="width:15%;">
+	<%
+		if (nodeDocument != '') {
+			print('<a href="' + nodeDocument + '" target="_blank"><img src="' + appModel.get('contextPrefix') + '/img/pdficon_large.png"></a>');
+		}
+	%>
+</td>
+
+

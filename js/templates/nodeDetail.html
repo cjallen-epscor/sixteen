@@ -1,0 +1,155 @@
+<article id="NodeDetail" >
+	<div class="container">
+		<div class="row">
+			<h2>
+				<span style="vertical-align:top" name="nodes" id="nodesViewTitle"></span>
+			</h2>
+		</div>
+		<div class="row col-md-13" id="nodeDetailHeader">
+			<div class="pull-left">
+				<%
+				if (node.homeUrl != '') {
+					print('<a class="popover-target" data-toggle="popover" data-trigger="hover" data-container="body" data-placement="top" data-original-title="Member Node Home Page" data-content="A link to the member node home page." href="' + node.homeUrl + '" target="_blank"><img src="' + node.logoUrl + '" height="45"/></a>');
+				}
+				%>
+			</div>
+			<div class="pull-right" style="margin-right:10px">
+				<div class="btn-group nav-bar-spacing" >
+		<!-- 
+					<a id="maps" href="#maps" style="color:black" class="btn">Maps</a>
+		-->
+					<a href="#nodes/<%=prevNodeShortId%>" style="color:black; font-size:13px" 
+							class="btn btn-default popover-target"
+							data-toggle="popover"
+							data-trigger="hover"
+							data-container="body"
+							data-placement="top"
+							data-original-title="Previous Member Node"
+							data-content="<%=prevNodeName%>">
+						<span class="glyphicon glyphicon-chevron-left" />&nbsp;Previous
+					</a>
+					<a id="nodes" href="#nodes" style="color:black; font-size:13px" class="btn btn-default <% if (activeSummary === true) print('active') %>">
+						Summary
+					</a>
+					<a href="#nodes/<%=nextNodeShortId%>" style="color:black; font-size:13px" 
+							class="btn btn-default popover-target"
+							data-toggle="popover"
+							data-trigger="hover"
+							data-container="body"
+							data-placement="top"
+							data-original-title="Next Member Node"
+							data-content="<%=nextNodeName%>">
+						Next&nbsp;<span class="glyphicon glyphicon-chevron-right" />
+					</a>
+				</div>
+			</div>
+		</div>
+
+		<!--<div id="Totals" class="row">
+			<div style="width:45%; margin-right:6%;" class="popover-target text-center label label-data"
+					data-toggle="popover" 
+					data-trigger="hover"
+					data-container="body" 
+					data-placement="right" 
+					data-original-title="Data Files"
+					data-content="The number of publicly available science data files available at the listed Repository through DataONE.  These numbers represent content provided to DataONE from this repository.  These figures include document revisions but exclude archived and private content.">
+						<div class="lead countData text-left">0,000</div>
+						<hr class="no-bkg"/>
+						<div class="bytesSummary text-left">
+						  Data Files (<span class="bytesData">0.00 GB</span>)
+						</div>
+			</div>
+		
+			<div style="width:45%;" class="popover-target text-center label label-metadata"
+				data-toggle="popover" 
+				data-trigger="hover"
+				data-container="body" 
+				data-placement="left" 
+				data-original-title="Metadata Records"
+				data-content="The number of publicly available science metadata records available at the listed Repository through DataONE.  These numbers represent content provided to DataONE from this repository.  These figures include document revisions but exclude archived and private content.">
+				<div class="lead countMetadata text-left">0,000</div>
+				<hr class="no-bkg"/>
+				<div class="bytesSummary text-left">
+				  Metadata Files (<span class="bytesMetadata">0.00 GB</span>)
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div>
+				<h4 id="chartTitle1"></h4>
+			</div>
+		</div>
+
+	<!--	<div class="row">
+			<div id="summaryChart"></div>
+	</div>-->
+<!--
+		<div class="row col-md-9 control-group controls" >
+				<div id="dateSelect1" class="btn-group pull-right">
+					<button type="button" class="btn btn-default <% if (filter == '12MONTHS') print('active') %>" value="12MONTHS">1 yr</button>
+					<button type="button" class="btn btn-default <% if (filter == d1Months) print('active') %>" value="<%=d1Months%>">D1</button>
+					<button type="button" class="btn btn-default <% if (filter == '60MONTHS') print('active') %>" value="60MONTHS">5 yrs</button>
+					<button type="button" class="btn btn-default <% if (filter == '120MONTHS') print('active') %>" value="120MONTHS">10 yrs</button>
+					<button type="button" class="btn btn-default <% if (filter == '240MONTHS') print('active') %>" value="240MONTHS">20 yrs</button>
+				</div>
+		</div>
+-->
+		<div id="nodeDetailArea">
+			<div style="margin-bottom:20px">
+				<p style="color:black"><%=node.description%></p>
+			</div>
+			<div class="row" style="margin-bottom:5px;">
+				<div class="black pull-left col-md-5">
+			    	<span class='bold'>Online with DataONE:&nbsp;</span><%=node.operationalDate%>
+			    </div>
+			    <div class="black pull-left">
+					<span class='bold'>Newest Content:&nbsp;</span><%=node.lastHarvested%>
+				</div>
+			</div>
+			<div class="row">
+					<%
+					if (node.nodeDocument != '') {
+					%>
+					<div class="black pull-left col-md-5" style="margin-top:12px; margin-bottom:12px;">
+						<span class="bold">Member Node Document:&nbsp;</span>
+						<a class="popover-target" 
+							data-toggle="popover" 
+							data-trigger="hover" 
+							data-container="body" 
+							data-placement="top" 
+							data-original-title="Node Document" 
+							data-content="A link to the member node description document." 
+							href="<%=node.nodeDocument%>" target="_blank"><img style="margin:0px; padding:0px" src="<%=appModel.get('contextPrefix')%>/img/pdficon_large.png"/></a>
+					<%
+					} else {
+					%>
+						<div class="black pull-left col-md-5" style="margin-top:16px; margin-bottom:16px;">
+							<span class="bold">Member Node Document:&nbsp;</span>
+					<%
+					}
+					%>
+				</div>
+			    <div class="black pull-left" style="margin-top:14px; margin-bottom:14px;">
+			    	<span class='bold'>Repository Status is:</span> 
+			    			<span class="popover-target"
+							data-toggle="popover"
+							data-trigger="hover" data-container="body"
+							data-placement="top" title="" data-original-title="Repository Status" data-content="Status: <%=node.state%>">
+			    		<%
+							if (node.state == 'OK') {
+								print('<span style="vertical-align:middle" class="glyphicon glyphicon-ok-sign repo-status repo-status-ok"></span>');
+							}
+							if (node.state == 'Unknown') {
+								print('<span style="vertical-align:middle" class="glyphicon glyphicon-question-sign repo-status repo-status-unknown"></span>');
+							}
+							if (node.state == 'Down') {
+								print('<span style="vertical-align:middle" class="glyphicon glyphicon-exclamation-sign repo-status repo-status-down"></span>');
+							}
+						%>
+					</span>
+			   	</div>
+			</div>
+		</div>
+	</div>
+</article>

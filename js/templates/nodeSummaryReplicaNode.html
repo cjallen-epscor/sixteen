@@ -1,0 +1,30 @@
+<td class="center" style="width:10%;">
+	<div class="popover-target"
+	data-toggle="popover"
+	data-trigger="hover" data-container="body"
+	data-placement="top" title="" data-original-title="Repository Status"
+	data-content="Status: <%=state%>">
+	<%
+		if (state == 'OK') {
+			print('<span class="glyphicon glyphicon-ok-sign repo-status repo-status-ok"></span>');
+		}
+		if (state == 'Unknown') {
+			print('<span class="glyphicon glyphicon-question-sign repo-status repo-status-unknown"></span>');
+		}
+		if (state == 'Down') {
+			print('<span class="glyphicon glyphicon-exclamation-sign repo-status repo-status-down"></span>');
+		}
+	%>
+	</div> 
+</td>
+<td class="node-summary-name-cell">
+	<span class="popover-target"
+			data-toggle="popover" 
+			data-trigger="hover"
+			data-container="body" 
+			data-placement="right"
+			data-original-title="<%=name%>"
+			data-content="DataONE provides replication services to satisfy both data and metadata preservation needs.  Member Nodes operating at Tier 4 permit local replication of other Member Nodes’ content, and in addition, DataONE hosts three dedicated replication nodes at the University of California Santa Barbara, the University of New Mexico and the Oak Ridge Campus.">
+			<%=name%>
+	</span>
+</td>

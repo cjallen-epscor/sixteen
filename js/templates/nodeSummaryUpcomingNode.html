@@ -1,0 +1,28 @@
+<!-- Represents a single row in the NodeSummary table -->
+<td class="center" style="width:10%;">
+	<div class="popover-target"
+		data-toggle="popover"
+		data-trigger="hover" data-container="body"
+		data-placement="top" title="" 
+		data-original-title="Repository Status"
+		data-content="Status: Coming Soon">
+			<span class="glyphicon glyphicon-cog repo-status repo-status-upcoming"></span>
+	</div>
+</td>
+<td class="node-summary-logo-cell" style="width:37%;">
+	<%
+		if (logoUrl != '') {
+			print('<a href="' + homeUrl + '" target="_blank"><img src="' + logoUrl + '" class="node-summary-logo"></a>');
+		}
+	%>
+</td>
+<td class="node-summary-name-cell" style="width:39%;">
+		<%=name%>
+</td>
+<td class="center" style="width:15%;">
+	<%
+		if (nodeDocument != '') {
+			print('<a href="' + nodeDocument + '" target="_blank"><img src="' + appModel.get('contextPrefix') + '/img/pdficon_large.png"></a>');
+		}
+	%>
+</td>

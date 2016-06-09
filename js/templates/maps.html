@@ -1,0 +1,28 @@
+<article id="Maps">
+  <div class="container">
+		<div class="row">
+        <div class="pull-left">
+  				<h2>
+  					<span name="maps" id="mapViewTitle"></span>
+  				</h2>
+        </div>
+        <div class="btn-group pull-right" style="vertical-align: middle; margin:20px 0px 20px 0px">
+          <a id="nodes" href="#nodes" style="color:black" class="btn">Summary</a>
+          <a id="maps" href="#maps" style="color:black" class="btn active">Maps</a>
+        </div>
+		</div>
+  </div>		
+  <div style='vertical-align: top'>
+	<table id="map-legend"
+        data-toggle="popover" 
+        data-trigger="hover" 
+        data-container="#map-legend"  
+        data-placement="bottom" title="" 
+        data-original-title="Data Distribution Info" 
+        data-content="This map shows the number of datasets by location for datasets that cover less than 1 degree of latitude or longitude.  Datasets that have large area or global coverage are not represented.  Repositories participating in DataONE are shown in teal." 
+        class="popover-target">
+  </table> 
+	<div id="map-canvas"><img src="<%=staticMapImgPath%>" alt="Data Distribution Map">
+	</div>
+  </div>
+</article>

@@ -1,0 +1,209 @@
+<article id="NodeSummary">
+
+	<div class="container">
+		<div class="row">
+			<div class="pull-left col-md-9">
+				<h2 class="text-left">
+					<span name="nodes" id="nodesViewTitle"></span>
+				</h2>
+			</div>
+		</div>
+
+<!-- Begin TOTALS	
+		<div id="Totals" class="row">
+				<div style="width:45%; margin-right:6%;" class="popover-target text-center label label-data"
+						data-toggle="popover" 
+						data-trigger="hover"
+						data-container="body" 
+						data-placement="right" 
+						data-original-title="Data Files"
+						data-content="The number of publicly available science data files available through DataONE.  These figures include document revisions but exclude archived and private content.">
+							<div class="lead countData text-left">0,000</div>
+							<hr class="no-bkg"/>
+							<div class="bytesSummary text-left">
+							  Data Files16 (<span class="bytesData">0.00 GB</span>)
+							</div>
+				</div>
+			
+				<div style="width:45%" class="popover-target text-center label label-metadata"
+					data-toggle="popover" 
+					data-trigger="hover"
+					data-container="body" 
+					data-placement="left" 
+					data-original-title="Metadata Records"
+					data-content="The number of publicly available science metadata records available through DataONE.  These figures include document revisions but exclude archived and private content.">
+					<div class="lead countMetadata text-left">0,000</div>
+					<hr class="no-bkg"/>
+					<div class="bytesSummary text-left">
+					  Metadata Files 16 (<span class="bytesMetadata">0.00 GB</span>)
+					</div>
+				</div>
+		</div>
+
+END TOTALS -->
+
+<!-- BEGIN BAR GRAPH
+	
+		<div class="row">
+			<div class="pull-left">
+				<h4 id="chartTitle"></h4>
+			</div>
+		</div>
+		
+		<div class="row">
+			<div id="summaryChart"></div>
+		</div>
+
+-->
+		<div class="row col-md-13">
+			<table id="nodesTable" class="table table-striped table-bordered tablesorter node-table">
+				<thead>
+					<tr>
+						<th><span class="popover-target"
+							data-toggle="popover" 
+							data-trigger="hover"
+							data-container="body" 
+							data-placement="top"
+                            data-html="true"
+							data-original-title="Status"
+							data-content="Status of the Member Node.<br>
+										<span class='glyphicon glyphicon-ok-sign repo-status repo-status-ok'/> - OK<br>
+										<span class='glyphicon glyphicon-question-sign repo-status repo-status-unknown'/> - Unknown<br>
+										<span class='glyphicon glyphicon-exclamation-sign repo-status repo-status-down'/> - Down<br>
+										<span class='glyphicon glyphicon-cog repo-status repo-status-upcoming'/> - Coming Soon">
+							 Status
+                            </span>
+						</th>
+						<th><span class="popover-target"
+							data-toggle="popover" 
+							data-trigger="hover"
+							data-container="body" 
+							data-placement="top"
+							data-original-title="Home"
+							data-content="Home page of the Member Node">
+								Home
+							</span>
+						</th>
+						<th><span class="popover-target"
+							data-toggle="popover" 
+							data-trigger="hover"
+							data-container="body" 
+							data-placement="top"
+							data-original-title="Name"
+							data-content="The member node name is a link to a member node specific view.">
+								Name
+							</span>
+						</th>
+						<th><span class="popover-target"
+							data-toggle="popover" 
+							data-trigger="hover"
+							data-container="body" 
+							data-placement="top"
+							data-original-title="Member Node Document"
+							data-content="A link to the member node description document.">
+								MN Document
+							</span>
+						</th>
+					</tr>
+				</thead>
+				<tbody id="summaryStats"></tbody>
+			</table>
+		</div>
+		<div id="replicaNodeDiv" class="row col-md-13">
+			<h4>Replication Nodes</h4>
+				<table id="replicationNodeTable" class="table table-striped table-bordered node-table">
+					<thead>
+						<tr>
+							<th style="width:10%;">
+								<span class="popover-target"
+										data-toggle="popover" 
+										data-trigger="hover"
+										data-container="body" 
+										data-placement="top"
+			                            data-html="true"
+										data-original-title="Status"
+										data-content="Status of the Member Node.<br>
+													<span class='glyphicon glyphicon-ok-sign repo-status repo-status-ok'/> - OK<br>
+													<span class='glyphicon glyphicon-question-sign repo-status repo-status-unknown'/> - Unknown<br>
+													<span class='glyphicon glyphicon-exclamation-sign repo-status repo-status-down'/> - Down<br>
+													<span class='glyphicon glyphicon-cog repo-status repo-status-upcoming'/> - Coming Soon">
+										 Status
+			                 	</span>
+							</th>
+							<th>
+								<span class="popover-target"
+									data-toggle="popover" 
+									data-trigger="hover"
+									data-container="body" 
+									data-placement="right"
+									data-original-title="Replication Node Name"
+									data-content="DataONE provides replication services to satisfy both data and metadata preservation needs.  Member Nodes operating at Tier 4 permit local replication of other Member Nodes’ content, and in addition, DataONE hosts three dedicated replication nodes at the University of California Santa Barbara, the University of New Mexico and the Oak Ridge Campus.">
+											Name
+									</span>
+								</th>
+						</tr>
+					</thead>
+					<tbody id="replicaNodeTableBody"></tbody>
+				</table>			
+		</div>
+		<div id="upcomingNodeDiv" class="row col-md-13">
+			<h4>Upcoming Member Nodes</h4>
+			<table id="upcomingNodeTable" class="table table-striped table-bordered node-table">
+				<thead>
+					<tr>
+						<th style="width:10%;">
+							<span class="popover-target"
+								data-toggle="popover" 
+								data-trigger="hover"
+								data-container="body" 
+								data-placement="top"
+		                        data-html="true"
+								data-original-title="Status"
+								data-content="Status of the Member Node.<br>
+											<span class='glyphicon glyphicon-ok-sign repo-status repo-status-ok'/> - OK<br>
+											<span class='glyphicon glyphicon-question-sign repo-status repo-status-unknown'/> - Unknown<br>
+											<span class='glyphicon glyphicon-exclamation-sign repo-status repo-status-down'/> - Down<br>
+											<span class='glyphicon glyphicon-cog repo-status repo-status-upcoming'/> - Coming Soon">
+								 Status
+		                    </span>					
+						</th>
+						<th style="width:37%;">
+							<span class="popover-target"
+								data-toggle="popover" 
+								data-trigger="hover"
+								data-container="body" 
+								data-placement="top"
+								data-original-title="Home"
+								data-content="Home page of the Member Node.">
+									Home
+							</span>
+						</th>
+						<th style="width:39%;">
+							<span class="popover-target"
+								data-toggle="popover" 
+								data-trigger="hover"
+								data-container="body" 
+								data-placement="top"
+								data-original-title="Name"
+								data-content="Member Node Name.">
+									Name
+							</span>
+						</th>
+						<th style="width:15%;">
+							<span class="popover-target"
+							data-toggle="popover" 
+							data-trigger="hover"
+							data-container="body" 
+							data-placement="top"
+							data-original-title="Member Node Document"
+							data-content="A link to the member node description document.">
+								MN Document
+							</span>
+						</th>
+					</tr>
+				</thead>
+				<tbody id="upcomingNodeTableBody"></tbody>
+			</table>
+		</div>
+	</div>
+</article>

@@ -1,0 +1,165 @@
+/*
+*  Customization overrides for integration in drupal theme.
+*/
+
+p,body{
+	font-size:15.3664px;
+		font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+}
+h2 {
+  line-height: inherit;
+}
+
+span.ext {
+        display:block;
+}
+
+a:hover,
+a:focus {
+  text-decoration: none;
+  color: #1C6E84;
+}
+
+#sengines{	
+	width:131px;	
+	background-image: url(/sites/all/themes/omega/omega/images/select-arrow.gif);
+	background-repeat: no-repeat;
+	background-position: right center;
+}
+
+#for{
+	width:157px;
+}
+
+#block-block-44 {
+	margin-top: -90px;
+}
+
+.breadcrumb {
+	/*border-bottom: thin solid #660033;*/
+	border-bottom:0 none;
+	/*font-size: 90%;*/
+	font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-size:15.68px;
+
+	background-color: #fff;
+
+	margin-top:0;
+	margin-bottom:18px;
+	padding:1em 1em 1em 0;
+}
+
+label {
+	margin:0px;
+	font:inherit;
+	font-weight: bold;
+	display: block;
+}
+
+.d1-anchor-style {
+	color:#660033;
+}
+
+.container {
+    width:700px;
+}
+
+#Content {
+	padding-top:0px;
+	margin-top:-30px;
+}
+
+.btn-default {
+	color:black;
+}
+
+input[type="text"], select {
+	-webkit-border-radius:0;
+	border-radius: 0;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	-moz-background-clip: padding;
+	-webkit-background-clip: padding;
+	background-clip: padding-box;
+	background-color: #fff;
+	border: 1px solid;
+	border-color: #848484 #c1c1c1 #e1e1e1;
+	color: #000;
+	outline: 0;
+	padding: 2px 3px;
+	font-size: 13px;
+	/*font-family: Arial, sans-serif;*/
+	font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	height: 1.8em;
+	margin: 0;
+	vertical-align: middle;
+	line-height: 1;
+}
+
+html, body {
+	/*background-color:#1C6E84;*/
+	background-color:#fff;		
+	font: 13px/1.5 ;
+		font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+}
+
+#map-canvas {
+    width: 100%;
+    height: 500px;
+    position: relative;
+    margin: 5px 0px 0px 0px;
+}
+
+#map-legend {
+    position: absolute;
+    top: 135px;
+    right: 1px;
+    color: #555555;
+    background-color: #F2F2F2;
+    opacity: .9;
+    width: 18em;
+    border-radius: 6px;
+    margin: 10px 10px 10px 10px;
+    z-index: 10000;    
+}
+
+#map-legend td {
+    padding: 0px;
+    margin: 0px;
+}
+
+#map-legend img {
+    padding: 5px;
+    margin: 0px;
+}
+
+.d1-anchor-style:hover {
+	color:#066;
+}
+
+table tbody tr td a:hover .node-stats-icon {
+	color:#1C6E84;
+}
+
+/*
+.table-hover tbody tr:hover .repo-status {
+        color: white;
+        opacity: 1.0;
+}
+
+.table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
+  background-color: #1C6E84;
+  color: white;
+}
+
+.table-hover tbody tr:hover td a {
+	color: white;
+}
+
+.node-stats-icon:hover {
+	color:#1C6E84;
+}
+*/
